@@ -1,2 +1,2 @@
 # uSavior
-This repo contains academic aid website.
+Academic aid website.
