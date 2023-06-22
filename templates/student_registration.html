@@ -16,8 +16,7 @@
             <div class="collapse navbar-collapse" id="navcol-1"><img src="/static/img/brands/logo2.png?h=e4625cd8501ed52833bc7e770fa2fa4b" width="185" height="79" style="width: 190px;height: 79px;">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="student_login">Log in</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="student_registration">Register</a>
+                    <li class="nav-item"><a class="nav-link" href="student_login">Log in</a></li>                
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
@@ -28,7 +27,37 @@
                 <div class="col-md-5 col-xl-4 text-center text-md-start">
                     <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Sign up</strong></span></h2>
                     <form method="post" data-bs-theme="light">
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="name" placeholder="Full Name"></div>
                         <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email" placeholder="Email"></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="date" name="birthday" placeholder="Birth Date"></div>
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="gender"><select class="form-select" id="gender">
+                            <optgroup label="Gender">
+                                <option value="1" selected="">Male</option>
+                                <option value="2">Female</option>
+                            </optgroup>
+                        </select></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="address" placeholder="Address"></div>
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="country"><select class="form-select" id="country">
+                            <optgroup label="Country">
+                                <option value="1" selected="">Bangladesh</option>
+                                <option value="2">India</option>
+                                <option value="3">Nepal</option>
+                            </optgroup>
+                        </select></div>
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="department"><select class="form-select" id="department">
+                            <optgroup label="Department">
+                                <option value="1" selected="">CSE</option>
+                                <option value="2">EEE</option>
+                                <option value="3">BBA</option>
+                            </optgroup>
+                        </select></div>
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="university"><select class="form-select" id="university">
+                            <optgroup label="University Name">
+                                <option value="1" selected="">BRAC University</option>
+                                <option value="2">North South University</option>
+                                <option value="3">East West University</option>
+                            </optgroup>
+                        </select></div>                        
                         <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password" placeholder="Password"></div>
                         <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat" placeholder="Repeat Password"></div>
                         <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Create account</button></div>

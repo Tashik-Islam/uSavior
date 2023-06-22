@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Log in [Student]- uSavior</title>
+    <title>Sign up - uSavior</title>
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css?h=97fdfa31c346c923d830c27d591ac4aa">
     <link rel="stylesheet" href="/static/css/Raleway.css?h=0ec1a47909b38d61779c28ccc34e194d">
 </head>
@@ -16,31 +16,33 @@
             <div class="collapse navbar-collapse" id="navcol-1"><img src="/static/img/brands/logo2.png?h=e4625cd8501ed52833bc7e770fa2fa4b" width="185" height="79" style="width: 190px;height: 79px;">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="student_login">Log in</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="student_registration">Register</a>
+                    <li class="nav-item"><a class="nav-link" href="student_login">Log in</a></li>
+          
             </div>
         </div>
-    </nav><!-- End: Navbar Centered Links -->  
-    <!-- Start: Login Form -->
+    </nav><!-- End: Navbar Centered Links -->
     <section class="py-4 py-md-5 my-5">
         <div class="container py-md-5">
             <div class="row">
-                <div class="col-md-6 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/login.svg?h=dd35c7dba58803954242d42488889a4c"></div>
+                <div class="col-md-6 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/register.svg?h=aa57a3341846af8b091dc008c25da279"></div>
                 <div class="col-md-5 col-xl-4 text-center text-md-start">
-                    <h2 class="display-6 fw-bold mb-5" style="font-size: 36px;"><span class="underline pb-1"><strong>Login</strong></span>&nbsp;as Student</h2>
-                    <ul method="post" data-bs-theme="light">
-                        <div class="mb-3"><input class="shadow form-control" type="email" name="email" placeholder="Email"></div>
-                        <div class="mb-3"><input class="shadow form-control" type="password" name="password" placeholder="Password"></div>
-                        <p class="text-muted"></p><a href="forgotten_password">Forgot your password?</a>
-                        <!-- <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Log in</button><a class="btn btn-primary shadow" role="button"  href="home" style="margin: 16px;">Back</a></div>-->
-                        <div><a class="btn btn-primary shadow" role="button"  href="student_dashboard">Log in</a><a class="btn btn-primary shadow" role="button"  href="home" style="margin: 16px;">Back</a></div>
-                    </ul><a class="btn btn-primary shadow" role="button" href="instructor_login"> <u>Not Student</u>? Log in as Instructor</a>
-                    
+                    <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Sign up</strong></span></h2>
+                    <form method="post" data-bs-theme="light">
+                        <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email" placeholder="Email"></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password" placeholder="Password"></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat" placeholder="Repeat Password"></div>
+                        <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Create account</button></div>
+                    </form>
+                    <p class="text-muted">Have an account? <a href="instructor_login">Log in&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <line x1="15" y1="16" x2="19" y2="12"></line>
+                                <line x1="15" y1="8" x2="19" y2="12"></line>
+                            </svg></a>&nbsp;</p>
                 </div>
             </div>
         </div>
-    </section><!-- End: Login Form -->
-    <!-- Start: Footer Multi Column -->
+    </section><!-- Start: Footer Multi Column -->
     <footer>
         <div class="container py-4 py-lg-5">
             <hr>

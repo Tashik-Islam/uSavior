@@ -10,6 +10,7 @@ db = PyMongo(app).db
 def home():
     return render_template('home.html')
 
+#---------------------------------------------Student---------------------------------------------------------
 @app.route("/student_login")
 def student_login():
     return render_template('student_login.html')
@@ -18,6 +19,20 @@ def student_login():
 def student_registration():
     return render_template('student_registration.html')
 
+@app.route("/student_dashboard")
+def student_dashboard():
+    #db.student.insert_one({'abdullah':2})
+    return render_template('student_dashboard.html')
+
+@app.route("/student_edit_profile")
+def student_edit_profile():
+    return render_template('student_editProfile.html')
+
+@app.route("/student_my_courses")
+def student_my_courses():
+    return render_template('student_myCourses.html')
+
+#---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
 def instructor_login():
     return render_template('instructor_login.html')
@@ -26,18 +41,26 @@ def instructor_login():
 def instructor_registration():
     return render_template('instructor_registration.html')
 
-@app.route("/forgotten_password")
-def forgotten_password():
-    return render_template('forgotten_password.html')
-
-@app.route("/student_dashboard")
-def student_dashboard():
-    #db.student.insert_one({'abdullah':2})
-    return render_template('student_dashboard.html')
-
 @app.route("/instructor_dashboard")
 def instructor_dashboard():
     return render_template('instructor_dashboard.html')
+
+@app.route("/instructor_edit_profile")
+def instructor_edit_profile():
+    return render_template('instructor_editProfile.html')
+
+@app.route("/instructor_my_courses")
+def instructor_my_courses():
+    return render_template('instructor_myCourses.html')
+
+
+#---------------------------------------------Admin---------------------------------------------------------
+
+#---------------------------------------------Others---------------------------------------------------------
+
+@app.route("/forgotten_password")
+def forgotten_password():
+    return render_template('forgotten_password.html')
 
 @app.route("/contacts")
 def contacts():
