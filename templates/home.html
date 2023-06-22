@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: url("animated_background.gif") repeat;
+    }
+    
+    #header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #header ul li {
+      margin-right: 10px;
+    }
+    
+    #header ul li a {
+      text-decoration: none;
+    }
+    
+    #content {
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    #content img {
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/static/img/logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-top">
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registration</a>
+            <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                <a class="dropdown-item" href='/student_dashboard'>As Student</a>
+                <a class="dropdown-item" href="#">As Instructor</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+          <div class="dropdown-menu" aria-labelledby="loginDropdown">
+            <a class="dropdown-item" href="#">As Student</a>
+            <a class="dropdown-item" href="#">As Instructor</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+  
+  <div id="content">
+    <img src="/static/img/uSavior.png" alt="Website Logo">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
