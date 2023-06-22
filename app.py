@@ -39,5 +39,9 @@ def student_dashboard():
 def instructor_dashboard():
     return render_template('instructor_dashboard.html')
 
+@app.route("/contacts")
+def contacts():
+    return render_template('contacts.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
