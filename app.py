@@ -32,6 +32,13 @@ def student_edit_profile():
 def student_my_courses():
     return render_template('student_myCourses.html')
 
+@app.route("/student_View_AllCourses")
+def student_View_AllCourses():
+    return render_template('student_ViewAllCourses.html')
+
+@app.route("/student_View_Cart")
+def student_View_Cart():
+    return render_template('student_ViewCart.html')
 #---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
 def instructor_login():
@@ -53,8 +60,16 @@ def instructor_edit_profile():
 def instructor_my_courses():
     return render_template('instructor_myCourses.html')
 
+@app.route("/instructor_view_AllCourses")
+def instructor_view_AllCourses():
+    return render_template('instructor_ViewAllCourses.html')
+
 
 #---------------------------------------------Admin---------------------------------------------------------
+
+@app.route("/admin_dashboard")
+def admin_dashboard():
+    return render_template('admin_dashboard.html')
 
 #---------------------------------------------Others---------------------------------------------------------
 
