@@ -1,4 +1,4 @@
-from flask import Flask,session, render_template, request, redirect, vercel
+from flask import Flask,session, render_template, request, redirect
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
