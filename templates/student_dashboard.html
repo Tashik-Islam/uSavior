@@ -140,6 +140,7 @@ mark {
 }
 
 
+
     </style>
 </head>
 <head>
@@ -159,7 +160,7 @@ mark {
                   <li class="nav-item"><a class="nav-link" href="student_my_courses">My Courses</a></li>
                   <li class="nav-item"><a class="nav-link" href="student_View_AllCourses">All Courses</a></li>
                   <li class="nav-item"><a class="nav-link" href="student_View_Cart">View Cart</a></li>
-              </ul><a class="btn btn-primary shadow" role="button" href="home">Logout</a>
+              </ul><a class="btn btn-primary shadow" role="button" href="logout">Logout</a>
           </div>
       </div>
   </nav><!-- End: Navbar Centered Links -->
@@ -170,38 +171,39 @@ mark {
 <div class="row align-items-center flex-row-reverse">
 <div class="col-lg-6">
 <div class="about-text go-to">
-<h3 class="dark-color">Abdullah Khondoker</h3>
-<h6 class="theme-color lead">UNIVERSITY NAME</h6>
-<p>I <mark>am a student</mark> from CSE department </p>
+<h3 class="dark-color">{{data['name']}}</h3>
+<h6 class="theme-color lead">{{data['university']}}</h6>
+<p><label>ID:</label> {{data['student_id']}} &nbsp;<mark>{{data['department']}} Department</mark></p>
 <div class="row about-list">
 <div class="col-md-6">
 <div class="media">
 <label>Birthday</label>
-<p>4th april 1998</p>
+<p>{{data['birthday']}}</p>
 </div>
 <div class="media">
 <label>Age</label>
 <p>22 Yr</p>
 </div>
-<div class="media">
-<label>Residence</label>
-<p>Bangladesh</p>
-</div>
+
 <div class="media">
 <label>Address</label>
-<p>Dhaka, Bangladesh</p>
+<p>{{data['address'][:17]}}...</p>
 </div>
 </div>
 <div class="col-md-6">
 <div class="media">
 <label>E-mail</label>
-<p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066f6860694662696b676f682865696b">[email&#160;protected]</a></p>
+<p><a href="mailto:"+{{session['email']}} class="__cf_email__" data-cfemail="066f6860694662696b676f682865696b">[email&#160;protected]</a></p>
 </div>
 <div class="media">
 <label>Phone</label>
-<p>01712312345</p>
+<p>{{data['contact']}}</p>
 
 
+</div>
+<div class="media">
+<label>Country</label>
+<p>{{data['country']}}</p>
 </div>
 </div>
 </div>
@@ -210,7 +212,11 @@ mark {
 
 <div class="col-lg-6">
 <div class="about-avatar">
+{% if data['gender'] == "Male" %}
 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title alt>
+{% else %}
+<img src="https://bootdey.com/img/Content/avatar/avatar3.png" title alt>
+{% endif %}
 </div>
 </div>
 </div>

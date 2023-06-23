@@ -23,6 +23,7 @@
     </nav><!-- End: Navbar Centered Links -->  
     <!-- Start: Login Form -->
     <section class="py-4 py-md-5 my-5">
+        <form action="student_login" method="post">
         <div class="container py-md-5">
             <div class="row">
                 <div class="col-md-6 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/login.svg?h=dd35c7dba58803954242d42488889a4c"></div>
@@ -32,13 +33,13 @@
                         <div class="mb-3"><input class="shadow form-control" type="email" name="email" placeholder="Email"></div>
                         <div class="mb-3"><input class="shadow form-control" type="password" name="password" placeholder="Password"></div>
                         <p class="text-muted"></p><a href="forgotten_password">Forgot your password?</a>
-                        <!-- <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Log in</button><a class="btn btn-primary shadow" role="button"  href="home" style="margin: 16px;">Back</a></div>-->
-                        <div><a class="btn btn-primary shadow" role="button"  href="student_dashboard">Log in</a><a class="btn btn-primary shadow" role="button"  href="home" style="margin: 16px;">Back</a></div>
+                        <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Login</button><a class="btn btn-primary shadow" role="button"  href="home" style="margin: 16px;">Back</a></div>
                     </ul><a class="btn btn-primary shadow" role="button" href="instructor_login"> <u>Not Student</u>? Log in as Instructor</a>
                     
                 </div>
             </div>
         </div>
+    </form>
     </section><!-- End: Login Form -->
     <!-- Start: Footer Multi Column -->
     {% include 'footer.html' %}

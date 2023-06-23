@@ -15,19 +15,27 @@
         <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1"><img src="/static/img/brands/logo2.png?h=e4625cd8501ed52833bc7e770fa2fa4b" width="185" height="79" style="width: 190px;height: 79px;">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="/home.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login.html">Log in</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="/signup.html">Register</a>
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
     <section class="py-5 mt-5">
         <div class="container">
             <div class="row row-cols-1 d-flex justify-content-center align-items-center">
+                {% if message == "Page Not Found" %}
                 <div class="col-md-10 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/404.svg?h=e977af73548094596c29b66e8ed72eb9"></div>
+
                 <div class="col text-center">
                     <h2 class="display-3 fw-bold mb-4">Page Not Found</h2>
+                    </ul><a class="btn btn-primary shadow" role="button" href="home">Back to Home</a>
                 </div>
+                {% else %}
+                <div class="col text-center">
+                
+                    <h2 class="display-3 fw-bold mb-4" style= "margin-top: 200px;">{{message}}</h2>
+                    </ul><a class="btn btn-primary shadow" role="button" href="home">Back to Home</a>
+                </div>
+                {% endif %}
+
             </div>
         </div>
     <!-- Start: Footer Multi Column -->

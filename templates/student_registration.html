@@ -21,45 +21,48 @@
         </div>
     </nav><!-- End: Navbar Centered Links -->
     <section class="py-4 py-md-5 my-5">
+        <form action="student_registration" method="post">
         <div class="container py-md-5">
             <div class="row">
                 <div class="col-md-6 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/register.svg?h=aa57a3341846af8b091dc008c25da279"></div>
                 <div class="col-md-5 col-xl-4 text-center text-md-start">
                     <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Sign up</strong></span></h2>
                     <form method="post" data-bs-theme="light">
-                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="name" placeholder="Full Name"></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email" placeholder="Email"></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="date" name="birthday" placeholder="Birth Date"></div>
-                        <div class="mb-3"><label class="shadow-sm form-contro" for="gender"><select class="form-select" id="gender">
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="name" placeholder="Full Name" oninput="this.value = this.value.toUpperCase()" required></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email" placeholder="Email" required></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="contact" placeholder="Contact Number" required></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="date" name="birthday" placeholder="Birth Date" required></div>
+                        <div class="mb-3"><label input class="shadow-sm form-contro" for="gender"><select class="form-select" name= "gender" id="gender" required>
                             <optgroup label="Gender">
-                                <option value="1" selected="">Male</option>
-                                <option value="2">Female</option>
+                                <option value="Male" selected>Male</option>
+                                <option value="Female">Female</option>
                             </optgroup>
                         </select></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="address" placeholder="Address"></div>
-                        <div class="mb-3"><label class="shadow-sm form-contro" for="country"><select class="form-select" id="country">
-                            <optgroup label="Country">
-                                <option value="1" selected="">Bangladesh</option>
-                                <option value="2">India</option>
-                                <option value="3">Nepal</option>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="address" placeholder="Address" required></div> 
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="country"><select class="form-select" name="country" id="country" required>
+                            <optgroup  label="Country">
+                                <option value="Bangladesh" selected>Bangladesh</option>
+                                <option value="India">India</option>
+                                <option value="Nepal">Nepal</option>
                             </optgroup>
                         </select></div>
-                        <div class="mb-3"><label class="shadow-sm form-contro" for="department"><select class="form-select" id="department">
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="student_id" placeholder="Studen ID" required></div>
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="department"><select class="form-select" name="department" id="department"required>
                             <optgroup label="Department">
-                                <option value="1" selected="">CSE</option>
-                                <option value="2">EEE</option>
-                                <option value="3">BBA</option>
+                                <option value="CSE" selected>CSE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="BBA">BBA</option>
                             </optgroup>
                         </select></div>
-                        <div class="mb-3"><label class="shadow-sm form-contro" for="university"><select class="form-select" id="university">
+                        <div class="mb-3"><label class="shadow-sm form-contro" for="university"><select class="form-select" name="university" id="university" required>
                             <optgroup label="University Name">
-                                <option value="1" selected="">BRAC University</option>
-                                <option value="2">North South University</option>
-                                <option value="3">East West University</option>
+                                <option value="BRAC University" selected>BRAC University</option>
+                                <option value="North South University">North South University</option>
+                                <option value="East West University">East West University</option>
                             </optgroup>
-                        </select></div>                        
-                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password" placeholder="Password"></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat" placeholder="Repeat Password"></div>
+                        </select></div>                   
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password" placeholder="Password" required></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat" placeholder="Repeat Password" required></div>
                         <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Create account</button></div>
                     </form>
                     <p class="text-muted">Have an account? <a href="student_login">Log in&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right">
@@ -71,6 +74,7 @@
                 </div>
             </div>
         </div>
+    </form>
     </section>
     <!-- Start: Footer Multi Column -->
     {% include 'footer.html' %}

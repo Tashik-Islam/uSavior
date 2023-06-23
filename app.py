@@ -2,42 +2,71 @@ from flask import Flask,session, render_template, request, redirect
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+app.secret_key = 'super secret key'
+
 app.config["MONGO_URI"] = "mongodb+srv://abdullah201:saveyourgrades@abdullah1065.hhjja0s.mongodb.net/uSavior"
 db = PyMongo(app).db
 
 @app.route("/home")
 @app.route("/")
 def home():
+
     return render_template('home.html')
 
 #---------------------------------------------Student---------------------------------------------------------
-@app.route("/student_login")
+@app.route("/student_login", methods = ['POST', 'GET'])
 def student_login():
-    return render_template('student_login.html')
+    if request.method == 'GET': 
+        if 'email' in session.keys(): return redirect('/student_dashboard')
+        return render_template('student_login.html', **locals())
+    elif request.method == 'POST':
+        recieved = request.form
+        found = db.student.find_one({'email':recieved['email'],'password':recieved['password']})
+        if found is None: return redirect('/student_login') 
+        session['email'] = recieved['email']
+        return redirect('/student_dashboard')
 
-@app.route("/student_registration")
+        
+
+@app.route("/student_registration", methods = ['POST', 'GET'])
 def student_registration():
-    return render_template('student_registration.html')
+    message = None
+    if request.method == 'GET': 
+        if 'email' in session.keys(): return redirect('/student_dashboard')
+        return render_template('student_registration.html', **locals())
+    elif request.method == 'POST':
+        recieved = request.form
+        found = db.student.find_one({'email':recieved['email']})
+        if found is not None: return redirect('/student_registration')
+        elif recieved ['password'] != recieved ['password_repeat']: return redirect('/student_registration')
+        db.student.insert_one(dict(recieved))
+        return redirect('/student_login')      
+    
 
 @app.route("/student_dashboard")
 def student_dashboard():
-    #db.student.insert_one({'abdullah':2})
-    return render_template('student_dashboard.html')
+    if 'email' not in session.keys(): return redirect('/student_login')
+    data = db.student.find_one({'email':session['email']})
+    return render_template('student_dashboard.html', **locals())
 
 @app.route("/student_edit_profile")
 def student_edit_profile():
+    if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_editProfile.html')
 
 @app.route("/student_my_courses")
 def student_my_courses():
+    if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_myCourses.html')
 
 @app.route("/student_View_AllCourses")
 def student_View_AllCourses():
+    if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_ViewAllCourses.html')
 
 @app.route("/student_View_Cart")
 def student_View_Cart():
+    if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_ViewCart.html')
 #---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
@@ -81,5 +110,17 @@ def forgotten_password():
 def contacts():
     return render_template('contacts.html')
 
+@app.route("/showError")
+def showError():
+    return render_template('showError.html', **locals())
+
+@app.route("/logout")
+def logout():
+    if 'email' in session.keys():
+        session.pop('email')
+    return redirect('/home')
+
+
 if __name__ == "__main__":
+    app.secret_key = 'super secret key'
     app.run(debug=True)
