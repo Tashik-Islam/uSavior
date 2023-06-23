@@ -1,5 +1,6 @@
 from flask import Flask,session, render_template, request, redirect
 from flask_pymongo import PyMongo
+from datetime import date, datetime
 
 app = Flask(__name__)
 app.secret_key = 'super secret key'
@@ -10,7 +11,6 @@ db = PyMongo(app).db
 @app.route("/home")
 @app.route("/")
 def home():
-
     return render_template('home.html')
 
 #---------------------------------------------Student---------------------------------------------------------
@@ -46,28 +46,34 @@ def student_registration():
 @app.route("/student_dashboard")
 def student_dashboard():
     if 'email' not in session.keys(): return redirect('/student_login')
-    data = db.student.find_one({'email':session['email']})
+    data, today = db.student.find_one({'email':session['email']}), date.today()
+    print()
+    date_of_birth = datetime.strptime(data['birthday'], "%Y-%m-%d").date()
+    age = today.year - date_of_birth.year
+    if today.month < date_of_birth.month or (today.month == date_of_birth.month and today.day < date_of_birth.day): age -= 1
     return render_template('student_dashboard.html', **locals())
 
 @app.route("/student_edit_profile")
 def student_edit_profile():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('student_editProfile.html')
+    data = db.student.find_one({'email':session['email']})
+    return render_template('student_editProfile.html', **locals())
 
 @app.route("/student_my_courses")
 def student_my_courses():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('student_myCourses.html')
+    return render_template('student_myCourses.html', **locals())
 
 @app.route("/student_View_AllCourses")
 def student_View_AllCourses():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('student_ViewAllCourses.html')
+    return render_template('student_ViewAllCourses.html', **locals())
 
 @app.route("/student_View_Cart")
 def student_View_Cart():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('student_ViewCart.html')
+    return render_template('student_ViewCart.html', **locals())
+
 #---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
 def instructor_login():
@@ -96,7 +102,7 @@ def instructor_view_AllCourses():
 
 #---------------------------------------------Admin---------------------------------------------------------
 
-@app.route("/admin_dashboard")
+@app.route("/admin")
 def admin_dashboard():
     return render_template('admin_dashboard.html')
 
