@@ -1,4 +1,4 @@
-from flask import Flask,session, render_template, request, redirect
+from flask import Flask,session, render_template, request, redirect, vercel
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -82,4 +82,4 @@ def contacts():
     return render_template('contacts.html')
 
 if __name__ == "__main__":
-    app.run(debug=False,host='0.0.0.0')
+    app.run(debug=True)
