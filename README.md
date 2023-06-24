@@ -1,6 +1,6 @@
-### uSavior
+# uSavior
 
-Academic aid website.
+<h2> Academic aid website. </h2>
 
 https://usavior.vercel.app/
 
