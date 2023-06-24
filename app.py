@@ -69,6 +69,10 @@ def student_View_AllCourses():
     if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_ViewAllCourses.html', **locals())
 
+@app.route("/specific_course_details")
+def specific_course_details():
+    return render_template('specific_course_details.html')
+
 @app.route("/student_View_Cart")
 def student_View_Cart():
     if 'email' not in session.keys(): return redirect('/student_login')
