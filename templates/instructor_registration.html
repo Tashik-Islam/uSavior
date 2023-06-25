@@ -1,3 +1,148 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .formbold-mb-3 {
+      margin-bottom: 15px;
+    }
+  
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+  
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+    }
+  
+    .formbold-img {
+      display: block;
+      margin: 0 auto 45px;
+    }
+  
+    .formbold-input-wrapp > div {
+      display: flex;
+      gap: 20px;
+    }
+  
+    .formbold-input-flex {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+    .formbold-input-flex > div {
+      width: 50%;
+    }
+    .formbold-form-input {
+      width: 100%;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      color: #536387;
+      outline: none;
+      resize: none;
+    }
+    .formbold-form-input::placeholder,
+    select.formbold-form-input,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-text,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-month-field,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-day-field,
+    .formbold-form-input[type='date']::-webkit-datetime-edit-year-field {
+      color: rgba(83, 99, 135, 0.5);
+    }
+  
+    .formbold-form-input:focus {
+      border-color: #6a64f1;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+    .formbold-form-label {
+      color: #07074D;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .formbold-form-file-flex {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .formbold-form-file-flex .formbold-form-label {
+      margin-bottom: 0;
+    }
+    .formbold-form-file {
+      font-size: 14px;
+      line-height: 24px;
+      color: #536387;
+    }
+    .formbold-form-file::-webkit-file-upload-button {
+      display: none;
+    }
+    .formbold-form-file:before {
+      content: 'Upload file';
+      display: inline-block;
+      background: #EEEEEE;
+      border: 0.5px solid #FBFBFB;
+      box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      padding: 3px 12px;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      color: #637381;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      margin-right: 10px;
+    }
+  
+    .formbold-btn {
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #6a64f1;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  
+    .formbold-w-45 {
+      width: 45%;
+    }
+
+        .centered-image {
+
+          display: block;
+          margin: 0 auto;
+        }
+
+  </style>
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -32,26 +177,195 @@
         </div>
     </nav><!-- End: Navbar Centered Links -->
     <section class="py-4 py-md-5 my-5">
-        <div class="container py-md-5">
-            <div class="row">
-                <div class="col-md-6 text-center"><img class="img-fluid w-100" src="/static/img/illustrations/register.svg?h=aa57a3341846af8b091dc008c25da279"></div>
-                <div class="col-md-5 col-xl-4 text-center text-md-start">
-                    <h2 class="display-6 fw-bold mb-5"><span class="underline pb-1"><strong>Apply Now</strong></span></h2>
-                    <form method="post" data-bs-theme="light">
-                        <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email" placeholder="Email"></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password" placeholder="Password"></div>
-                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat" placeholder="Repeat Password"></div>
-                        <div class="mb-5"><button class="btn btn-primary shadow" type="submit">Create account</button></div>
-                    </form>
-                    <p class="text-muted">Have an account? <a href="instructor_login">Log in&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <line x1="15" y1="16" x2="19" y2="12"></line>
-                                <line x1="15" y1="8" x2="19" y2="12"></line>
-                            </svg></a>&nbsp;</p>
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+               <img src="https://idealliance.org/wp-content/uploads/2020/12/Wide-Format-Course.png" alt="Your Image" class="centered-image" style="width: 800px; height: 400px" >
+              <form action="https://formbold.com/s/FORM_ID" method="POST">
+                <div class="formbold-input-flex">
+                  <div>
+                    <label for="firstname" class="formbold-form-label"> First Name </label>
+                    <input
+                      type="text"
+                      name="firstname"
+                      id="firstname"
+                      placeholder="Your first name"
+                      class="formbold-form-input"
+                      required
+                    />
+                  </div>
+          
+                  <div>
+                    <label for="lastname" class="formbold-form-label"> Last Name </label>
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lastname"
+                      placeholder="Your last name"
+                      class="formbold-form-input"
+                      required
+                    />
+                  </div>
                 </div>
+          
+                <div class="formbold-input-flex">
+                  <div>
+                      <label for="email" class="formbold-form-label"> Email </label>
+                      <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="example@email.com"
+                      class="formbold-form-input"
+                      required
+                      />
+                  </div>
+          
+                  <div>
+                      <label class="formbold-form-label">Gender</label>
+          
+                      <select class="formbold-form-input" name="occupation" id="occupation" >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="others">Others</option>
+                      </select>
+                  </div>
+                </div>
+          
+                <div class="formbold-mb-3 formbold-input-wrapp">
+                  <label for="phone" class="formbold-form-label"> Phone </label>
+          
+                  <div>
+                    <input
+                      type="text"
+                      name="areacode"
+                      id="areacode"
+                      placeholder="Area code"
+                      class="formbold-form-input formbold-w-45"
+                      required
+                    />
+          
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      placeholder="Phone number"
+                      class="formbold-form-input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="formbold-mb-3">
+                    <label for="address" class="formbold-form-label"> Address </label>
+            
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      placeholder="Street address"
+                      class="formbold-form-input formbold-mb-3"
+                      required
+                    />
+                    <input
+                      type="text"
+                      name="address2"
+                      id="address2"
+                      placeholder="Street address line 2"
+                      class="formbold-form-input"
+                      required
+                    />
+                  </div>
+                <div class="formbold-mb-3">
+                  <label for="age" class="formbold-form-label"> Institution: </label>
+                  <input
+                    type="text"
+                    name="age"
+                    id="age"
+                    class="formbold-form-input"
+                    placeholder="BRAC UNIVERSITY"
+                    required
+                  />
+                </div>
+        
+                <div class="formbold-mb-3">
+                    <label for="age" class="formbold-form-label"> Department: </label>
+                    <input
+                      type="text"
+                      name="age"
+                      id="age"
+                      class="formbold-form-input"
+                      placeholder="CSE/CS/BBA/CIVIL/EEE"
+                      required
+                    />
+                  </div>
+        
+                  <div class="formbold-mb-3">
+                    <label for="age" class="formbold-form-label"> HSC/A level Passing Year: </label>
+                    <input
+                      type="year"
+                      name="age"
+                      id="age"
+                      class="formbold-form-input"
+                      placeholder="201?"
+                      required
+                    />
+                  </div>
+          
+                  <div class="formbold-mb-3">
+                    <label for="age" class="formbold-form-label"> Subject: </label>
+                    <input
+                    placeholder="-Choice 1-"
+                      type="text"
+                      name="age"
+                      id="age"
+                      class="formbold-form-input"
+                      placeholder="Data Structure/Algorithm etc."
+                      required
+                    />
+                  </div>
+                  <div class="formbold-mb-3">
+                    <label for="age" class="formbold-form-label" > Subject: </label>
+                    <input
+                    placeholder="-Choice 2-"
+                      type="text"
+                      name="age"
+                      id="age"
+                      class="formbold-form-input"
+                      placeholder="Data Structure/Algorithm etc."
+                    />
+                  </div>
+              
+          
+                <div class="formbold-mb-3">
+                  <label for="message" class="formbold-form-label">
+                    Why Usaviour should appoint you as a Instructor? :
+                  </label>
+                  <textarea
+                    rows="6"
+                    name="message"
+                    id="message"
+                    class="formbold-form-input"
+                    required
+                  ></textarea>
+                </div>
+          
+                <div class="formbold-form-file-flex">
+                  <label for="upload" class="formbold-form-label">
+                    Upload Resume
+                  </label>
+                  <input
+                    type="file"
+                    name="upload"
+                    id="upload"
+                    class="formbold-form-file"
+                    required
+                  />
+                </div>
+          
+                <button class="formbold-btn">Apply Now</button>
+              </form>
             </div>
-        </div>
+          </div>
+
     </section>
     <!-- Start: Footer Multi Column -->
     {% include 'footer.html' %}
