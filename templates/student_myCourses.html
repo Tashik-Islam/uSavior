@@ -1,3 +1,36 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  h1 {
+    margin: 0;
+    color: #24285b;
+  }
+
+  
+  table {
+    width: 120%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #24285b;
+  }
+
+
+</style>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 <html>
@@ -9,81 +42,22 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css?h=97fdfa31c346c923d830c27d591ac4aa">
     <link rel="stylesheet" href="/static/css/Raleway.css?h=0ec1a47909b38d61779c28ccc34e194d">
   
-  
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    header {
-      background-color: #f2f2f2;
-      padding: 25px;
-      text-align: center;
-      
-    }
-    
-    h1 {
-      margin: 0;
-      color: #24285b;
-    }
-
-    .logo {
-      position: absolute; /* Add position absolute to the logo */
-      top: 5px; /* Adjust the top positioning as needed */
-      left: 10px; /* Adjust the left positioning as needed */
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color:  #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-      color: #24285b;
-    }
-
-
-    footer {
-      background-color: #f2f2f2;
-      padding: 5px;
-      
-      font-size: 14px;
-      color: #24285b;
-      margin-top: 8px;
-    }
-  </style>
 </head>
 <body>
   <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
     <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1"><img src="/static/img/brands/logo2.png?h=e4625cd8501ed52833bc7e770fa2fa4b" width="185" height="79" style="width: 190px;height: 79px;">
             <ul class="navbar-nav mx-auto">
-                 <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="student_my_courses">My Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="student_dashboard">Dashboard</a></li>
-            </ul><a class="btn btn-primary shadow" role="button" href="logout">Log out</a>
+                <li class="nav-item"><a class="nav-link" href="student_edit_profile">Edit Profile</a></li>
+                <li class="nav-item"><a class="nav-link active" href="student_my_courses">My Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="student_View_AllCourses">All Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="student_View_Cart">View Cart</a></li>
+            </ul><a class="btn btn-primary shadow" role="button" href="logout">Logout</a>
         </div>
     </div>
-  </nav>
+</nav>
 
 
   <header class="pt-5">
