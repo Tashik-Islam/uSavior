@@ -70,13 +70,24 @@ def student_View_AllCourses():
     return render_template('student_ViewAllCourses.html', **locals())
 
 @app.route("/specific_course_details")
-def specific_course_details():
+def student_specific_course_details():
+    if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('specific_course_details.html')
 
 @app.route("/student_View_Cart")
 def student_View_Cart():
     if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_ViewCart.html', **locals())
+
+@app.route("/play_video")
+def student_play_video():
+    if 'email' not in session.keys(): return redirect('/student_login')
+    return render_template('play_video.html', **locals())
+
+@app.route("/video_list")
+def student_video_list():
+    if 'email' not in session.keys(): return redirect('/student_login')
+    return render_template('video_list.html', **locals())
 
 #---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
