@@ -7,9 +7,12 @@
     }
     body {
       font-family: 'Inter', sans-serif;
+      flex-direction: column;
     }
     .formbold-mb-3 {
       margin-bottom: 15px;
+      flex-direction: column;
+
     }
   
     .formbold-main-wrapper {
@@ -17,6 +20,8 @@
       align-items: center;
       justify-content: center;
       padding: 48px;
+      flex-direction: column;
+
     }
   
     .formbold-form-wrapper {
@@ -25,25 +30,33 @@
       width: 100%;
       background: white;
       padding: 40px;
+      flex-direction: column;
+
     }
   
     .formbold-img {
       display: block;
       margin: 0 auto 45px;
+      flex-direction: column;
+
     }
   
     .formbold-input-wrapp > div {
       display: flex;
       gap: 20px;
+      flex-direction: column;
+
     }
   
     .formbold-input-flex {
       display: flex;
       gap: 20px;
       margin-bottom: 15px;
+      flex-direction: column;
+
     }
     .formbold-input-flex > div {
-      width: 50%;
+      width: 100%;
     }
     .formbold-form-input {
       width: 100%;
@@ -56,13 +69,11 @@
       color: #536387;
       outline: none;
       resize: none;
+      flex-direction: column;
+
     }
     .formbold-form-input::placeholder,
-    select.formbold-form-input,
-    .formbold-form-input[type='date']::-webkit-datetime-edit-text,
-    .formbold-form-input[type='date']::-webkit-datetime-edit-month-field,
-    .formbold-form-input[type='date']::-webkit-datetime-edit-day-field,
-    .formbold-form-input[type='date']::-webkit-datetime-edit-year-field {
+    select.formbold-form-input {
       color: rgba(83, 99, 135, 0.5);
     }
   
@@ -92,28 +103,7 @@
       line-height: 24px;
       color: #536387;
     }
-    .formbold-form-file::-webkit-file-upload-button {
-      display: none;
-    }
-    .formbold-form-file:before {
-      content: 'Upload file';
-      display: inline-block;
-      background: #EEEEEE;
-      border: 0.5px solid #FBFBFB;
-      box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25);
-      border-radius: 3px;
-      padding: 3px 12px;
-      outline: none;
-      white-space: nowrap;
-      -webkit-user-select: none;
-      cursor: pointer;
-      color: #637381;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 16px;
-      margin-right: 10px;
-    }
-  
+
     .formbold-btn {
       text-align: center;
       width: 100%;
@@ -145,15 +135,21 @@
       position: center;
       margin-bottom: 50px;
     }
+.form_outline{
+    display: flex;
+    flex-direction: column;
+}
   </style>
 
 <!DOCTYPE html>
+
+
 <html data-bs-theme="light" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Sign up - uSavior</title>
+    <title>View all course</title>
     <link rel="shortcut icon" type="image/png" href="/static/img/brands/logo.png">
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css?h=97fdfa31c346c923d830c27d591ac4aa">
     <link rel="stylesheet" href="/static/css/Raleway.css?h=0ec1a47909b38d61779c28ccc34e194d">
@@ -165,52 +161,26 @@
         <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1"><img src="/static/img/brands/logo2.png?h=e4625cd8501ed52833bc7e770fa2fa4b" width="185" height="79" style="width: 190px;height: 79px;">
                 <ul class="navbar-nav mx-auto">
-                    {% if 'email' in session.keys() %}
-                    <li class="nav-item"><a class="nav-link active" href="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="instructor_dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="instructor_dashboard">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="instructor_edit_profile">Edit Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="instructor_my_courses">My Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="instructor_view_AllCourses">All Courses</a></li>
-                    </ul><a class="btn btn-primary shadow" role="button" href="logout">Logout</a>
-                    {% else %}
-                    <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="student_login">Log in</a></li>
-                    {% endif %}
+                    <li class="nav-item"><a class="nav-link active" href="instructor_view_AllCourses">All Courses</a></li>
+                </ul><a class="btn btn-primary shadow" role="button" href="logout">Logout</a>
             </div>
         </div>
     </nav><!-- End: Navbar Centered Links -->
+    <div class="form_outline">
     <section class="py-4 py-md-5 my-5">
         <div class="formbold-main-wrapper">
             <div class="dashboard-photo">
-              <img src="/static/img/avatar/people.png" alt="people" style="width: 800px; height: 300px"> 
+              <img src="https://www.gstatic.com/youtube/img/creator/no_content_illustration_upload_video_v3.svg" alt="people" style="width: 500px; height: 500px"> 
               <form action="https://formbold.com/s/FORM_ID" method="POST">
-                <div class="formbold-input-flex">
-                  <div>
-                    <label for="firstname" class="formbold-form-label"> First Name </label>
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      placeholder="Your first name"
-                      class="formbold-form-input"
-                      required
-                    />
-                  </div>
+                  
           
-                  <div>
-                    <label for="lastname" class="formbold-form-label"> Last Name </label>
-                    <input
-                      type="text"
-                      name="lastname"
-                      id="lastname"
-                      placeholder="Your last name"
-                      class="formbold-form-input"
-                      required
-                    />
-                  </div>
-                </div>
           
                 <div class="formbold-input-flex">
+                    
                   <div>
                       <label for="email" class="formbold-form-label"> Email </label>
                       <input
@@ -222,63 +192,9 @@
                       required
                       />
                   </div>
-          
-                  <div>
-                      <label class="formbold-form-label">Gender</label>
-          
-                      <select class="formbold-form-input" name="occupation" id="occupation" >
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="others">Others</option>
-                      </select>
-                  </div>
-                </div>
-          
-                <div class="formbold-mb-3 formbold-input-wrapp">
-                  <label for="phone" class="formbold-form-label"> Phone </label>
-          
-                  <div>
-                    <input
-                      type="text"
-                      name="areacode"
-                      id="areacode"
-                      placeholder="Area code"
-                      class="formbold-form-input formbold-w-45"
-                      required
-                    />
-          
-                    <input
-                      type="text"
-                      name="phone"
-                      id="phone"
-                      placeholder="Phone number"
-                      class="formbold-form-input"
-                      required
-                    />
-                  </div>
-                </div>
+                
                 <div class="formbold-mb-3">
-                    <label for="address" class="formbold-form-label"> Address </label>
-            
-                    <input
-                      type="text"
-                      name="address"
-                      id="address"
-                      placeholder="Street address"
-                      class="formbold-form-input formbold-mb-3"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="address2"
-                      id="address2"
-                      placeholder="Street address line 2"
-                      class="formbold-form-input"
-                      required
-                    />
-                  </div>
-                <div class="formbold-mb-3">
-                  <label for="age" class="formbold-form-label"> Institution: </label>
+                  <label for="age" class="formbold-form-label"> Institution </label>
                   <input
                     type="text"
                     name="age"
@@ -290,7 +206,7 @@
                 </div>
         
                 <div class="formbold-mb-3">
-                    <label for="age" class="formbold-form-label"> Department: </label>
+                    <label for="age" class="formbold-form-label"> Department</label>
                     <input
                       type="text"
                       name="age"
@@ -301,34 +217,21 @@
                     />
                   </div>
         
-                  <div class="formbold-mb-3">
-                    <label for="age" class="formbold-form-label"> HSC/A level Passing Year: </label>
-                    <input
-                      type="year"
-                      name="age"
-                      id="age"
-                      class="formbold-form-input"
-                      placeholder="201?"
-                      required
-                    />
-                  </div>
           
                   <div class="formbold-mb-3">
-                    <label for="age" class="formbold-form-label"> Subject: </label>
+                    <label for="age" class="formbold-form-label"> Course Code </label>
                     <input
-                    placeholder="-Choice 1-"
                       type="text"
                       name="age"
                       id="age"
                       class="formbold-form-input"
-                      placeholder="Data Structure/Algorithm etc."
+                      placeholder="CSE111-BRACU/ CSE101-NSU"
                       required
                     />
                   </div>
                   <div class="formbold-mb-3">
-                    <label for="age" class="formbold-form-label" > Subject: </label>
+                    <label for="age" class="formbold-form-label" > Course Title </label>
                     <input
-                    placeholder="-Choice 2-"
                       type="text"
                       name="age"
                       id="age"
@@ -336,11 +239,33 @@
                       placeholder="Data Structure/Algorithm etc."
                     />
                   </div>
-              
-          
+                  <div class="formbold-mb-3">
+                    <label for="message" class="formbold-form-label">
+                      Course Introduction
+                    </label>
+                    <textarea
+                      rows="6"
+                      name="message"
+                      id="message"
+                      class="formbold-form-input"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="formbold-mb-3">
+                    <label for="message" class="formbold-form-label">
+                      Your Course overview
+                    </label>
+                    <textarea
+                      rows="6"
+                      name="message"
+                      id="message"
+                      class="formbold-form-input"
+                      required
+                    ></textarea>
+                  </div>
                 <div class="formbold-mb-3">
                   <label for="message" class="formbold-form-label">
-                    Why Usavior should appoint you as a Instructor? :
+                    Why you think your video is helpful for the students? 
                   </label>
                   <textarea
                     rows="6"
@@ -350,31 +275,36 @@
                     required
                   ></textarea>
                 </div>
+                <p> <b> Step 01: Upload your Videos in your Drive. <b> <br>
+                    <b> Step 02: Put the video link in Drive link form and wait for the response! <b> </p>
+                <div class="formbold-mb-3">
+                    <label for="age" class="formbold-form-label"> Drive link for videos</label>
+                    <input
+                      type="text"
+                      name="age"
+                      id="age"
+                      class="formbold-form-input"
+                      placeholder=" Video link!"
+                      required
+                    />
+                  </div>
           
-                <div class="formbold-form-file-flex">
-                  <label for="upload" class="formbold-form-label">
-                    Upload Resume
-                  </label>
-                  <input
-                    type="file"
-                    name="upload"
-                    id="upload"
-                    class="formbold-form-file"
-                    required
-                  />
-                </div>
-          
-                <button class="formbold-btn">Apply Now</button>
-              </form>
+                <button class="formbold-btn">Request to upload</button>
+              </form>      
             </div>
           </div>
 
     </section>
+</div>
+
+
+
+
+
+
     <!-- Start: Footer Multi Column -->
     {% include 'footer.html' %}
     <!-- End: Footer Multi Column -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/static/js/startup-modern.js?h=860a1ecddc64fd24c02f2fc109343dbd"></script>
 </body>
-
-</html>

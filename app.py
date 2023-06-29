@@ -79,15 +79,15 @@ def student_View_Cart():
     if 'email' not in session.keys(): return redirect('/student_login')
     return render_template('student_ViewCart.html', **locals())
 
-@app.route("/play_video")
+@app.route("/student_play_video")
 def student_play_video():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('play_video.html', **locals())
+    return render_template('student_play_video.html', **locals())
 
-@app.route("/video_list")
+@app.route("/student_video_list")
 def student_video_list():
     if 'email' not in session.keys(): return redirect('/student_login')
-    return render_template('video_list.html', **locals())
+    return render_template('student_video_list.html', **locals())
 
 #---------------------------------------------Instructor---------------------------------------------------------
 @app.route("/instructor_login")
@@ -113,6 +113,10 @@ def instructor_my_courses():
 @app.route("/instructor_view_AllCourses")
 def instructor_view_AllCourses():
     return render_template('instructor_ViewAllCourses.html')
+
+@app.route("/instructor_upload_video")
+def instructor_upload_video():
+    return render_template('instructor_upload_video.html')
 
 
 #---------------------------------------------Admin---------------------------------------------------------
