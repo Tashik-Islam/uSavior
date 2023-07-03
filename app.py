@@ -125,6 +125,16 @@ def instructor_upload_video():
 def admin_dashboard():
     return render_template('admin_dashboard.html')
 
+@app.route("/admin_StuManagement")
+def admin_StuManagement():
+    return render_template('admin_StuManagement.html')
+
+@app.route("/admin_InsManagement")
+def admin_InsManagement():
+    return render_template('admin_InsManagement.html')
+
+
+
 #---------------------------------------------Others---------------------------------------------------------
 
 @app.route("/forgotten_password")
